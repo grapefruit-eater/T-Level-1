@@ -12,7 +12,8 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
     <script src="L.Control.MousePosition.js"></script>
-
+    <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
+    <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css' rel='stylesheet' />
 	
 </head>
 <body>
@@ -40,6 +41,8 @@
         }).addTo(mymap);
 	
 	L.control.mousePosition().addTo(mymap);
+
+	mymap.addControl(new L.Control.Fullscreen());
 
         var marker = L.marker([51.14471, -2.69866]).addTo(mymap);
 	var college = L.marker([51.129852, -2.7334955]).addTo(mymap);
