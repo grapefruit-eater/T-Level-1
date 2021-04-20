@@ -49,7 +49,12 @@
 	    maxZoom: 22
         });
 	
-
+       	var mymap = L.map('mapid',
+            center: [51.14471, -2.69866],
+	    zoom: 13,
+	    maxZoom: 20,	  
+	    layers: [osm]		 
+	);
 	
         var marker = L.marker([51.14471, -2.69866]).addTo(mymap);
 	var college = L.marker([51.129852, -2.7334955]).addTo(mymap);
@@ -67,13 +72,7 @@
             "Markers": marker
        };
 	
-       	var mymap = L.map('mapid',
-            center: [51.14471, -2.69866],
-	    zoom: 13,
-	    maxZoom: 20,	  
-	    layers: [osm, marker]		 
-	);
-	
+
        L.control.layers(baseMaps, overlayMaps).addTo(mymap);
        L.control.mousePosition().addTo(mymap);
 
