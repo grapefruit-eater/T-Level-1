@@ -51,10 +51,6 @@
 	
 
 	
-	L.control.mousePosition().addTo(mymap);
-
-	mymap.addControl(new L.Control.Fullscreen());
-
         var marker = L.marker([51.14471, -2.69866]).addTo(mymap);
 	var college = L.marker([51.129852, -2.7334955]).addTo(mymap);
 	
@@ -78,8 +74,10 @@
 	    layers: [osm, marker]		 
 	);
 	
-       L.control.layers(baseMaps, overlayMaps).addTo(map);
-	
+       L.control.layers(baseMaps, overlayMaps).addTo(mymap);
+       L.control.mousePosition().addTo(mymap);
+
+	mymap.addControl(new L.Control.Fullscreen());
 	omnivore.csv('strode.csv').addTo(mymap);
 </script>
 
