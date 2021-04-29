@@ -53,6 +53,14 @@
             maxNativeZoom: 18,
 	    maxZoom: 22
         });
+	
+	var surface = L.tileLayer('https://geoffrowland.github.io/Surface-Street/{z}/{x}/{y}.png', {
+	    maxNativeZoom: 18,	
+	    maxZoom: 20,
+	    minZoom: 12,
+	    attribution: 'LiDAR 1m DSM Environment Agency OGL © Crown Copyright 2021'
+        });	
+	
 	var marker = L.marker([51.14471, -2.69866]).addTo(mymap);
 	marker.bindPopup("<img class='popup' src='tor.jpg'/><br /><b>Glastonbury Tor</b>").openPopup();
         
@@ -69,6 +77,7 @@
         };
 
         var overlayMaps = {
+	    "Surface": surface,
             "Marker": marker,
             "College": college,
             "College 1": college1
