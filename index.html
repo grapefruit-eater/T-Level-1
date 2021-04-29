@@ -77,12 +77,17 @@
            "OSM ": osm,
            "Google": google
         };
-
+	var datafile = omnivore.csv('strode.csv', {
+	    maxZoom: 18,
+	    minZoom: 15
+	}).addTo(mymap);
+	
         var overlayMaps = {
 	    "Surface": surface,
             "Marker": marker,
             "College": college,
-            "College 1": college1
+            "College 1": college1,
+	    "Data": datafile
        };
 	
 
@@ -90,7 +95,7 @@
        L.control.mousePosition().addTo(mymap);
 
 	mymap.addControl(new L.Control.Fullscreen());
-	omnivore.csv('strode.csv').addTo(mymap);
+
 </script>
 
 
