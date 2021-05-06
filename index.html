@@ -252,7 +252,7 @@
            "OSM ": osm,
            "Google": google
         };
-	var datafile = omnivore.csv('strode.csv', null, siteData).on('ready', function() {}).addTo(mymap);
+	var datafile = omnivore.csv('strode.csv').addTo(mymap);
 	
         var overlayMaps = {
 	    "Surface": surface,
