@@ -34,6 +34,61 @@
 	//	tileSize: 512,
 	//	zoomOffset: -1
 	//}).addTo(mymap);
+	var siteData = L.geoJson(null, {
+		pointToLayer: function (feature, latlng) {
+			if (feature.properties.Type == 'Dry Stone Walling Centre'){
+			    return L.marker(latlng, {icon: redIcon})
+			}else if(feature.properties.Type == 'Chalk'){
+				return L.marker(latlng, {icon: greenIcon})
+			}else if(feature.properties.Type == 'Kimmeridge'){
+				return L.marker(latlng, {icon: greyIcon})
+			}else if(feature.properties.Type == 'Building'){
+				return L.marker(latlng, {icon: yellowIcon})
+			}else if(feature.properties.Type == 'Oil-shale'){
+				return L.marker(latlng, {icon: blackIcon})
+			}else if(feature.properties.Type == 'Ironstone'){
+				return L.marker(latlng, {icon: orangeIcon})
+			}else{
+				return L.marker(latlng, {icon: blueIcon})
+			}
+        },
+        onEachFeature: function(feature, layer) {
+			layer.bindTooltip(
+			    feature.properties.Feature +
+			     '<br />' + feature.properties.GridRef.split(" ")[0] + ' ' + feature.properties.GridRef.split(" ")[1].substr(0,3) + ' ' + feature.properties.GridRef.split(" ")[2].substr(0,3)
+			);
+            layer.bindPopup(
+            'Church: ' + feature.properties.Feature +
+            '<br />Parish: ' + feature.properties.Parish +
+            '<br />' + feature.properties.Description +
+            //'<br /><img width="100%" src="img/' + feature.properties.Image + '">' +
+            '<br />Building Stone:'+
+            '<br />Other: ' + feature.properties.Other+   
+            '<br />Heathstone: ' + feature.properties.Heathstone+   
+            '<br />Flint: ' + feature.properties.Flint+   
+            '<br />Chalk: ' + feature.properties.Chalk+             
+            '<br />Upper Greensand: ' + feature.properties.UpperGreensand +  
+            '<br />Wealden: ' + feature.properties.Wealden +  
+            '<br />Purbeck: ' + feature.properties.Purbeck +  
+            '<br />Wardour: ' + feature.properties.Wardour +  
+            '<br />Portland: ' + feature.properties.Portland +  
+            '<br />Corallian: ' + feature.properties.Corallian +    
+            '<br />Cornbrash: ' + feature.properties.Cornbrash +                 
+            '<br />Forest Marble: ' + feature.properties.ForestMarble +          
+            '<br />Inferior Oolite: ' + feature.properties.InferiorOolite +
+			'<br />Ham Hill Stone: ' + feature.properties.HamHillStone +
+			'<br />Bridport Sands: ' + feature.properties.BridportSands +
+			'<br />Beacon Limestone: ' + feature.properties.BeaconLimestone +
+			'<br />Middle Lias: ' + feature.properties.MiddleLias +
+			'<br />Blue Lias: ' + feature.properties.BlueLias +
+			'<br/><br /><a href = "' + feature.properties.Link + '" target = "_blank">More information</a>' +
+            '<br /><br />Short Grid Ref: ' + feature.properties.GridRef.split(" ")[0] + ' ' + feature.properties.GridRef.split(" ")[1].substr(0,3) + ' ' + feature.properties.GridRef.split(" ")[2].substr(0,3) +
+            '<br />Long Grid Ref: ' + feature.properties.GridRef +
+            '<br />Lng: ' + feature.geometry.coordinates[0].toString() + ' Lat: ' + feature.geometry.coordinates[1].toString()
+            );
+        }
+    });
+	
 	var mymap = L.map('mapid', {
             center: [51.14471, -2.69866],
 	    zoom: 13,
