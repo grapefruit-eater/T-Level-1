@@ -75,10 +75,7 @@
            "OSM ": osm,
            "Google": google
         };
-	var datafile = omnivore.csv('strode.csv', {
-	    maxZoom: 18,
-	    minZoom: 15
-	}).addTo(mymap);
+	var datafile = omnivore.csv('strode.csv').addTo(mymap);
 	
         var overlayMaps = {
 	    "Surface": surface,
