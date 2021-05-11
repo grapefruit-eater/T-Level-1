@@ -94,7 +94,7 @@
         };
 	//var data = omnivore.csv('strode.csv')
 	//.addTo(mymap);
-	var data = omnivore.csv('strode.csv', siteData).on('ready', function() {}).addTo(map);
+	var data = omnivore.csv('strode.csv', null, siteData).on('ready', function() {}).addTo(map);
 	
         var overlayMaps = {
 	    "Surface": surface,
