@@ -66,18 +66,18 @@
 	
 	var siteData = L.geoJson(null, {
             onEachFeature: function(feature, layer) {
-		layer.bindTooltip(
-		    feature.properties.Feature +
-			   '<br />' + feature.properties.GridRef.split(" ")[0] + ' ' + feature.properties.GridRef.split(" ")[1].substr(0,3) + ' ' + feature.properties.GridRef.split(" ")[2].substr(0,3)
-		);
-                layer.bindPopup(
-                   '' + feature.properties.Feature +
-                   '<br />Parish: ' + feature.properties.Parish +
-                   '<br />County: ' + feature.properties.County + 
-                   '<br /><br />Short Grid Ref: ' + feature.properties.GridRef.split(" ")[0] + ' ' + feature.properties.GridRef.split(" ")[1].substr(0,3) + ' ' + feature.properties.GridRef.split(" ")[2].substr(0,3) +
-                   '<br />Long Grid Ref: ' + feature.properties.GridRef +
-                  '<br />Lng: ' + feature.geometry.coordinates[0].toString() + ' Lat: ' + feature.geometry.coordinates[1].toString()
-                );
+		//layer.bindTooltip(
+		//    feature.properties.Feature +
+		//	   '<br />' + feature.properties.GridRef.split(" ")[0] + ' ' + feature.properties.GridRef.split(" ")[1].substr(0,3) + ' ' + feature.properties.GridRef.split(" ")[2].substr(0,3)
+		//);
+                //layer.bindPopup(
+                //   '' + feature.properties.Feature +
+                //   '<br />Parish: ' + feature.properties.Parish +
+                //   '<br />County: ' + feature.properties.County + 
+                 //  '<br /><br />Short Grid Ref: ' + feature.properties.GridRef.split(" ")[0] + ' ' + feature.properties.GridRef.split(" ")[1].substr(0,3) + ' ' + feature.properties.GridRef.split(" ")[2].substr(0,3) +
+                 //  '<br />Long Grid Ref: ' + feature.properties.GridRef +
+                 // '<br />Lng: ' + feature.geometry.coordinates[0].toString() + ' Lat: ' + feature.geometry.coordinates[1].toString()
+               // );
             }
         })
 	
