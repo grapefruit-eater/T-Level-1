@@ -64,8 +64,8 @@
 	    attribution: 'LiDAR 1m DSM Environment Agency OGL &copy; Crown Copyright 2021'
         });
 	
-	var siteData = L.geoJson(null, {
-            onEachFeature: function(feature, layer) {
+	//var siteData = L.geoJson(null, {
+        //    onEachFeature: function(feature, layer) {
 		//layer.bindTooltip(
 		//    feature.properties.Feature +
 		//	   '<br />' + feature.properties.GridRef.split(" ")[0] + ' ' + feature.properties.GridRef.split(" ")[1].substr(0,3) + ' ' + feature.properties.GridRef.split(" ")[2].substr(0,3)
@@ -78,8 +78,8 @@
                  //  '<br />Long Grid Ref: ' + feature.properties.GridRef +
                  // '<br />Lng: ' + feature.geometry.coordinates[0].toString() + ' Lat: ' + feature.geometry.coordinates[1].toString()
                // );
-            }
-        })
+         //   }
+       // })
 	
 	//var marker = L.marker([51.14471, -2.69866]).addTo(mymap);
 	//marker.bindPopup("<img class='popup' src='tor.jpg'/><br /><b>Glastonbury Tor</b>").openPopup();
@@ -95,8 +95,11 @@
         };
 	var data = omnivore.csv('strode.csv')
 	.on('ready', function() {
-            // when this is fired, the layer
-            // is done being initialized
+             onEachFeature: function(feature, layer) {
+	     layer.bindTooltip(
+		'Hello World!<br />'
+		);     
+             }
         })
 	.addTo(mymap);
 	//var data = omnivore.csv('strode.csv', null, siteData).on('ready', function() {}).addTo(map);
