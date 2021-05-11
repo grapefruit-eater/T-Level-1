@@ -90,8 +90,8 @@
            "OSM ": osm,
            "Google": google
         };
-	var data = omnivore.csv('strode.csv').addTo(mymap);
-	//var data = omnivore.csv('strode.csv', null, siteData).on('ready', function() {}).addTo(map);
+	//var data = omnivore.csv('strode.csv').addTo(mymap);
+	var data = omnivore.csv('strode.csv', null, siteData).on('ready', function() {}).addTo(mymap);
 
         var overlayMaps = {
 	    "Surface": surface,
