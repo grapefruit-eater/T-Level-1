@@ -76,14 +76,15 @@
            "OSM ": osm,
            "Google": google
         };
-	var datafile = omnivore.csv('strode.csv').addTo(mymap);
+	var data = omnivore.csv('strode.csv').addTo(mymap);
+	//var data = omnivore.csv('strode.csv', null, siteData).on('ready', function() {}).addTo(map);
 	
         var overlayMaps = {
 	    "Surface": surface,
             //"Marker": marker,
             //"College": college,
             //"College 1": college1,
-	    "Data": datafile
+	    "Data": data
        };
 	
 
