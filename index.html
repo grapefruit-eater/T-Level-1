@@ -41,10 +41,11 @@
             },
             onEachFeature: function(feature, layer) {
 		layer.bindTooltip(
-	            'Hello'
+	            feature.properties.location
 		);
                 layer.bindPopup(
-                     'World' 
+                     feature.properties.location +
+		     '<br>' + feature.properties.description
                 );
             }
         });
