@@ -93,7 +93,12 @@
            "OSM ": osm,
            "Google": google
         };
-	var data = omnivore.csv('strode.csv').addTo(mymap);
+	var data = omnivore.csv('strode.csv')
+	.on('ready', function() {
+            // when this is fired, the layer
+            // is done being initialized
+        })
+	.addTo(mymap);
 	//var data = omnivore.csv('strode.csv', null, siteData).on('ready', function() {}).addTo(map);
 	
         var overlayMaps = {
