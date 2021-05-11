@@ -34,6 +34,20 @@
 	//	tileSize: 512,
 	//	zoomOffset: -1
 	//}).addTo(mymap);
+	
+	var siteData = L.geoJson(null, {
+	    pointToLayer: function (feature, latlng) {
+		return L.marker(latlng)
+            },
+            onEachFeature: function(feature, layer) {
+		layer.bindTooltip(
+	            'Hello'
+		);
+                layer.bindPopup(
+                     'World' 
+                );
+            }
+        });
 
 	var mymap = L.map('mapid', {
             center: [51.14471, -2.69866],
