@@ -35,21 +35,7 @@
 	//	zoomOffset: -1
 	//}).addTo(mymap);
 	
-	var siteData = L.geoJson(null, {
-	    
-	    pointToLayer: function (feature, latlng) {
-		return L.marker(latlng)
-            },
-            onEachFeature: function(feature, layer) {
-		layer.bindTooltip(
-	            feature.properties.location
-		);
-                layer.bindPopup(
-                     feature.properties.location +
-		     '<br>' + feature.properties.description
-                );
-            }
-        });
+
 
  	var mymap = L.map('mapid', {
             center: [51.14471, -2.69866],
@@ -92,6 +78,22 @@
            "OSM ": osm,
            "Google": google
         };
+	
+	var siteData = L.geoJson(null, {
+	    
+	    pointToLayer: function (feature, latlng) {
+		return L.marker(latlng)
+            },
+            onEachFeature: function(feature, layer) {
+		layer.bindTooltip(
+	            feature.properties.location
+		);
+                layer.bindPopup(
+                     feature.properties.location +
+		     '<br>' + feature.properties.description
+                );
+            }
+        });
 	//var data = omnivore.csv('strode.csv').addTo(mymap);
 	var data = omnivore.csv('strode.csv', null, siteData).on('ready', function() {}).addTo(mymap);
 
