@@ -80,7 +80,6 @@
         };
 	
 	var siteData = L.geoJson(null, {
-	    mymap.fitBounds(siteData.getBounds());
 	    pointToLayer: function (feature, latlng) {
 		return L.marker(latlng)
             },
