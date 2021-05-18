@@ -73,7 +73,7 @@
            "OSM ": osm,
            "Google": google
         };
-	var siteData = L.geoJson(strodeData , {
+	var data = L.geoJson(strodeData , {
 	//var siteData = L.geoJson(null , {
 	    pointToLayer: function (feature, latlng) {
 		return L.marker(latlng)
