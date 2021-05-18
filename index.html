@@ -19,12 +19,8 @@
 </head>
 <body>
 
-
-
 <div id="mapid"></div>
 <script>
-
-	
 
 	//L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
        	//maxZoom: 20,
@@ -35,8 +31,6 @@
 	//	zoomOffset: -1
 	//}).addTo(mymap);
 	
-
-
  	var mymap = L.map('mapid', {
             center: [51.12965, -2.73257],
 	    zoom: 17,
@@ -104,7 +98,6 @@
             //"College 1": college1,
 	    "Data": data
        };
-	
 
        L.control.layers(baseMaps, overlayMaps).addTo(mymap);
        L.control.mousePosition().addTo(mymap);
@@ -112,8 +105,6 @@
 	mymap.addControl(new L.Control.Fullscreen());
 
 </script>
-
-
 
 </body>
 </html>
