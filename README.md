@@ -1,4 +1,4 @@
 t level
-https://grapefruit-eater.github.com/T-Level-1
+https://grapefruit-eater.github.io/T-Level-1
 
 gog
