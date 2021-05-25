@@ -1,6 +1,4 @@
-# T-level
-My first T-Level repository for Strode College
+t level
+https://grapefruit-eater.github.com/T-Level-1
 
-Demo: https://geoffrowland.github.io/T-Level/
-
-&copy; Geoff Rowland 2021
+gog
